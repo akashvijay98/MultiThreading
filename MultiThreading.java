@@ -28,8 +28,11 @@ class MultiThreading implements Runnable {
 class Main {
     public static void main(String[] args) {
         int n=3;
+
+        // Initialize thread Pool
         ExecutorService executor = Executors.newFixedThreadPool(n);
         for(int i=0;i<6;i++){
+            // spawn new thread
             executor.execute(new MultiThreading(i));
             
         }
